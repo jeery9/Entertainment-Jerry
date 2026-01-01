@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entertainment Jerry</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-dot"></div>
+      <div class="brand-text">
+        <h1>Entertainment Jerry</h1>
+        <small>Music • Video • Gallery</small>
+      </div>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Primary">
+      <button class="tab-btn active" data-target="audio">Audio</button>
+      <button class="tab-btn" data-target="video">Video</button>
+      <button class="tab-btn" data-target="gallery">Gallery</button>
+    </nav>
+
+    <div class="header-actions">
+      <button id="export-zip" class="page-btn" title="Export stored files to ZIP">Export ZIP</button>
+      <button id="clear-all" class="page-btn" title="Clear all stored files">Clear All</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="top-controls">
+        <div class="pagination" id="pagination"></div>
+        <div class="page-info" id="page-info"></div>
+      </div>
+
+      <!-- Audio Tab -->
+      <section id="audio" class="tab-panel active">
+        <h2>Audio</h2>
+        <p class="lead">Each page has 10 audio placeholders. Click a placeholder to select a file or drag files onto the tab area to fill empty slots.</p>
+
+        <div class="tab-drop" id="audio-drop" aria-label="Audio drop area">
+          <span class="hint">Drop audio files here (fills empty slots) or click to pick files</span>
+        </div>
+
+        <div id="audio-grid" class="slot-grid"></div>
+      </section>
+
+      <!-- Video Tab -->
+      <section id="video" class="tab-panel">
+        <h2>Video</h2>
+        <p class="lead">Each page has 10 video placeholders. Click a placeholder to select a file or drag files onto the tab area to fill empty slots.</p>
+
+        <div class="tab-drop" id="video-drop" aria-label="Video drop area">
+          <span class="hint">Drop video files here (fills empty slots) or click to pick files</span>
+        </div>
+
+        <div id="video-grid" class="slot-grid"></div>
+
+        <div class="video-player-wrap">
+          <video id="video-player" controls width="720" preload="metadata"></video>
+        </div>
+      </section>
+
+      <!-- Gallery Tab -->
+      <section id="gallery" class="tab-panel">
+        <h2>Gallery</h2>
+        <p class="lead">Each page has 10 image placeholders. Click a placeholder to select a file or drag images onto the tab area to fill empty slots.</p>
+
+        <div class="tab-drop" id="image-drop" aria-label="Image drop area">
+          <span class="hint">Drop image files here (fills empty slots) or click to pick files</span>
+        </div>
+
+        <div id="image-grid" class="slot-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Image modal -->
+  <div id="image-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <img id="modal-image" alt="Gallery item" />
+      <figcaption id="modal-caption"></figcaption>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <small>
+      Entertainment Jerry — local playback only. Files remain on your device and are stored locally in your browser (IndexedDB).
+      Background photo: "Man wearing white headphones" — Photo by Burst on Pexels (https://www.pexels.com/photo/man-wearing-white-headphones-814508/).
+    </small>
+  </footer>
+
+  <!-- JSZip (for export) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-a1f4t0a3F6G3nBzVx2Bq8g6c9j2b0n6g+qQcC3iVxgVZ9lF61w9s1oO2rF6f9rQyB1l8T4n2x3k5g4hB0h4Wg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
